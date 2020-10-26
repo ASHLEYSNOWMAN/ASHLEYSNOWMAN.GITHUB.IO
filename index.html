@@ -1,0 +1,509 @@
+<html>
+
+<head></head>
+<style>
+    body {
+  background-color: #F4F4F4;
+}
+
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  background-color: #AC163B;
+  overflow: hidden;
+}
+.container:before {
+  content: '';
+  position: absolute;
+  height: 250px;
+  width: 125px;
+  background-color: #E41D78;
+  border-top-left-radius: 250px;
+  border-bottom-left-radius: 250px;
+}
+.container .snow {
+  position: relative;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background-color: #F4F4F4;
+}
+.container .snow--1 {
+  left: 30%;
+  top: 15%;
+  -webkit-animation: snow1 2s infinite;
+          animation: snow1 2s infinite;
+}
+.container .snow--2 {
+  left: 25%;
+  top: 40%;
+  -webkit-animation: snow2 3s infinite;
+          animation: snow2 3s infinite;
+}
+.container .snow--3 {
+  left: 7%;
+  top: 55%;
+  -webkit-animation: snow3 2s infinite;
+          animation: snow3 2s infinite;
+}
+.container .snow--4 {
+  left: 85%;
+  top: 15%;
+  -webkit-animation: snow4 1.5s infinite;
+          animation: snow4 1.5s infinite;
+}
+.container .snow--5 {
+  left: 90%;
+  top: 40%;
+  -webkit-animation: snow5 2.5s infinite;
+          animation: snow5 2.5s infinite;
+}
+.container .snowman {
+  position: relative;
+  -webkit-animation: snowman 1s infinite;
+          animation: snowman 1s infinite;
+}
+.container .snowman--head {
+  position: relative;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #F4F4F4;
+  left: 95px;
+  box-shadow: inset 0 6px #1A1849, inset 0 6px 0 0 #1A1849;
+}
+.container .snowman--eyes {
+  position: relative;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: #1A1849;
+  top: -45px;
+  left: 112px;
+}
+.container .snowman--eyes:after {
+  content: '';
+  position: absolute;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: #1A1849;
+  top: 0;
+  left: 18px;
+}
+.container .snowman--cheeks {
+  position: relative;
+  height: 9px;
+  width: 9px;
+  border-radius: 50%;
+  background-color: #AC163B;
+  top: -40px;
+  left: 100px;
+}
+.container .snowman--cheeks:after {
+  content: '';
+  position: absolute;
+  height: 9px;
+  width: 9px;
+  border-radius: 50%;
+  background-color: #AC163B;
+  top: 0;
+  left: 40px;
+}
+.container .snowman--nose {
+  position: relative;
+  top: -47px;
+  left: 107px;
+  height: 0;
+  width: 0;
+  border-style: solid;
+  border-width: 0 0 10px 18px;
+  border-color: transparent transparent #E41D78 transparent;
+}
+.container .snowman--mouth {
+  position: relative;
+  background-color: #1A1849;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  top: -45px;
+  left: 130px;
+}
+.container .snowman--body {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: #F4F4F4;
+  top: -40px;
+  left: 75px;
+}
+.container .snowman--bikini {
+  position: relative;
+  width: 100px;
+  border-bottom: 2px solid #1A1849;
+  top: -90px;
+  left: 75px;
+}
+.container .snowman--bikini--left {
+  position: absolute;
+  top: -28px;
+  left: 17px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 14.5px 30px 14.5px;
+  border-color: transparent transparent #426A76 transparent;
+}
+.container .snowman--bikini--left:before {
+  content: '';
+  position: absolute;
+  top: -19px;
+  left: -1px;
+  height: 22px;
+  width: 2px;
+  background-color: #1A1849;
+}
+.container .snowman--bikini--right {
+  position: absolute;
+  top: -28px;
+  left: 52px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 14.5px 30px 14.5px;
+  border-color: transparent transparent #426A76 transparent;
+}
+.container .snowman--bikini--right:before {
+  content: '';
+  position: absolute;
+  top: -19px;
+  left: -1px;
+  height: 22px;
+  width: 2px;
+  background-color: #1A1849;
+}
+.container .snowman--floaty {
+  position: relative;
+  width: 120px;
+  height: 30px;
+  background-color: #426A76;
+  border-radius: 30px;
+  top: -60px;
+  left: 65px;
+}
+.container .water {
+  position: relative;
+  top: -65px;
+  width: 300px;
+  height: 60px;
+  background-color: #1A1849;
+  -webkit-animation: water 3s infinite;
+          animation: water 3s infinite;
+}
+.container .water:after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-repeat: repeat;
+  height: 10px;
+  background-size: 20px 20px;
+  background-image: radial-gradient(circle at 10px -5px, transparent 12px, #1A1849 13px);
+}
+
+@-webkit-keyframes water {
+  0% {
+    left: 0px;
+  }
+  25% {
+    left: 20px;
+  }
+  50% {
+    left: 0px;
+  }
+  75% {
+    left: -20px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes water {
+  0% {
+    left: 0px;
+  }
+  25% {
+    left: 20px;
+  }
+  50% {
+    left: 0px;
+  }
+  75% {
+    left: -20px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+@-webkit-keyframes snowman {
+  0% {
+    top: 0px;
+  }
+  25% {
+    top: 2px;
+  }
+  50% {
+    top: 0px;
+  }
+  75% {
+    top: -2px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+@keyframes snowman {
+  0% {
+    top: 0px;
+  }
+  25% {
+    top: 2px;
+  }
+  50% {
+    top: 0px;
+  }
+  75% {
+    top: -2px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+@-webkit-keyframes snow1 {
+  0% {
+    opacity: 0;
+    top: -5%;
+  }
+  25% {
+    opactiy: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    top: 15%;
+  }
+}
+@keyframes snow1 {
+  0% {
+    opacity: 0;
+    top: -5%;
+  }
+  25% {
+    opactiy: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    top: 15%;
+  }
+}
+@-webkit-keyframes snow2 {
+  0% {
+    opacity: 0;
+    top: -5%;
+  }
+  25% {
+    opactiy: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    top: 40%;
+  }
+}
+@keyframes snow2 {
+  0% {
+    opacity: 0;
+    top: -5%;
+  }
+  25% {
+    opactiy: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    top: 40%;
+  }
+}
+@-webkit-keyframes snow3 {
+  0% {
+    opacity: 0;
+    top: -5%;
+  }
+  25% {
+    opactiy: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    top: 55%;
+  }
+}
+@keyframes snow3 {
+  0% {
+    opacity: 0;
+    top: -5%;
+  }
+  25% {
+    opactiy: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    top: 55%;
+  }
+}
+@-webkit-keyframes snow4 {
+  0% {
+    opacity: 0;
+    top: -5%;
+  }
+  25% {
+    opactiy: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    top: 15%;
+  }
+}
+@keyframes snow4 {
+  0% {
+    opacity: 0;
+    top: -5%;
+  }
+  25% {
+    opactiy: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    top: 15%;
+  }
+}
+@-webkit-keyframes snow5 {
+  0% {
+    opacity: 0;
+    top: -5%;
+  }
+  25% {
+    opactiy: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    top: 40%;
+  }
+}
+@keyframes snow5 {
+  0% {
+    opacity: 0;
+    top: -5%;
+  }
+  25% {
+    opactiy: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    top: 40%;
+  }
+}
+
+</style>
+<body>
+	<div class="container">
+		<div class="snow snow--1"></div>
+		<div class="snow snow--2"></div>
+		<div class="snow snow--3"></div>
+		<div class="snow snow--4"></div>
+		<div class="snow snow--5"></div>
+		<div class="snowman">
+			<div class="snowman--head"></div>
+			<div class="snowman--eyes"></div>
+			<div class="snowman--cheeks"></div>
+			<div class="snowman--nose"></div>
+			<div class="snowman--mouth"></div>
+			<div class="snowman--body"></div>
+			<div class="snowman--bikini">
+				<div class="snowman--bikini--left"></div>
+				<div class="snowman--bikini--right"></div>
+			</div>
+			<div class="snowman--floaty"></div>
+		</div>
+		<div class="water">
+		</div>
+	</div>
+</body>
+
+</html>
